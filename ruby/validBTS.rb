@@ -9,6 +9,11 @@ end
 
 def is_valid_bst(root)
     # type your code here
+    if ((root.left.nil?)? false : (root.val < root.left.val) | (root.right.nil?)? false : (root.right.val < root.val))
+        return false
+    else
+        return ((root.left.nil?)? true : is_valid_bst(root.left)) & ((root.right.nil?)? true : is_valid_bst(root.right))
+    end
 end
 
 if __FILE__ == $PROGRAM_NAME
